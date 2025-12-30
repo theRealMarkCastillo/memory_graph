@@ -76,6 +76,8 @@ cargo run
 ### 2. Mars Colony Simulation
 A more complex example simulating an AI agent on a Mars colony. It demonstrates **Root Cause Analysis** (outbound traversal) and **Contextual Recall** (inbound traversal) across a chain of 4 connected memories.
 
+> 📖 **[Read the full simulation walkthrough](docs/MARS_SIMULATION.md)** for details on the dataset, graph structure, and query logic.
+
 ```bash
 # Run the simulation
 cargo run --example mars_simulation
