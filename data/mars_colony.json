@@ -1,0 +1,78 @@
+[
+  {
+    "id": "019b7184-c4af-7b90-8a4d-a46ab020423c",
+    "content": "Sensor anomaly detected in Sector 7. Thermal spikes observed.",
+    "embedding": [0.8, 0.1, 0.1],
+    "memory_type": {
+      "type": "Episodic",
+      "data": {
+        "participants": ["System"],
+        "location": "Sector 7"
+      }
+    },
+    "metadata": { "timestamp": "2045-05-12T08:00:00Z" },
+    "edges": [],
+    "created_at": "2025-12-30T10:00:00Z",
+    "last_accessed_at": "2025-12-30T10:00:00Z",
+    "access_count": 1,
+    "importance": 0.9,
+    "decay_rate": 0.1
+  },
+  {
+    "id": "019b7184-c4af-7b90-8a4d-a471b8d941e5",
+    "content": "Sector 7 houses the main fusion power conduit.",
+    "embedding": [0.7, 0.2, 0.1],
+    "memory_type": {
+      "type": "Semantic",
+      "data": {
+        "confidence": 1.0,
+        "source": "Colony Schematics"
+      }
+    },
+    "metadata": {},
+    "edges": [],
+    "created_at": "2025-12-30T10:00:00Z",
+    "last_accessed_at": "2025-12-30T10:00:00Z",
+    "access_count": 0,
+    "importance": 0.5,
+    "decay_rate": 0.0
+  },
+  {
+    "id": "019b7184-c4af-7b90-8a4d-a481bfad43a0",
+    "content": "Fusion conduits emit thermal spikes when coolant pressure is low.",
+    "embedding": [0.2, 0.8, 0.1],
+    "memory_type": {
+      "type": "Semantic",
+      "data": {
+        "confidence": 0.9,
+        "source": "Engineering Manual"
+      }
+    },
+    "metadata": {},
+    "edges": [],
+    "created_at": "2025-12-30T10:00:00Z",
+    "last_accessed_at": "2025-12-30T10:00:00Z",
+    "access_count": 0,
+    "importance": 0.7,
+    "decay_rate": 0.0
+  },
+  {
+    "id": "019b7184-c4af-7b90-8a4d-a491bfad43b1",
+    "content": "Commander Lewis authorized a coolant flush yesterday.",
+    "embedding": [0.1, 0.1, 0.9],
+    "memory_type": {
+      "type": "Episodic",
+      "data": {
+        "participants": ["Commander Lewis"],
+        "location": "Control Room"
+      }
+    },
+    "metadata": { "timestamp": "2045-05-11T14:00:00Z" },
+    "edges": [],
+    "created_at": "2025-12-30T10:00:00Z",
+    "last_accessed_at": "2025-12-30T10:00:00Z",
+    "access_count": 1,
+    "importance": 0.8,
+    "decay_rate": 0.2
+  }
+]
