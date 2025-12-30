@@ -4,7 +4,9 @@
 
 > ⚠️ **Status: Concept / Specification Phase**
 
-MemoryGraph is a research-driven, open-source database designed as the **native storage layer for AI agent long-term memory**. It goes beyond combining vectors and graphs — it provides an opinionated cognitive schema with built-in temporal decay, memory importance scoring, and emergence research instrumentation.
+**MemoryGraph is a research-grade memory engine for AI agents where semantic similarity and relational context are unified to study coherence, decay, and long-term recall.**
+
+It goes beyond combining vectors and graphs — it provides an opinionated cognitive schema with built-in temporal decay, memory importance scoring, and emergence research instrumentation.
 
 ## 🚀 The Problem
 
@@ -20,11 +22,11 @@ Existing solutions bolt vectors onto graphs (or vice versa). They are **storage-
 | Microsoft GraphRAG | Orchestration layer, not a database; uses external stores |
 
 **The real gap:**
-*   No database treats vectors and edges as **co-equal citizens** in the query planner
-*   No database has **cognitive primitives** built-in (temporal decay, importance, memory types)
-*   No database provides **emergence research instrumentation** (coherence metrics, orphan detection)
+*   No system treats vectors and edges as **co-equal citizens** in the query planner
+*   No system has **cognitive primitives** built-in (temporal decay, importance, memory types)
+*   No system provides **emergence research instrumentation** (coherence metrics, orphan detection)
 
-## 💡 The Solution: Cognition-First Storage
+## 💡 The Solution: Cognition-First Memory
 
 MemoryGraph treats **Memories** as cognitive units — not just data records. Each memory has *content* (vector), *context* (edges), and *cognitive state* (importance, recency, access patterns).
 

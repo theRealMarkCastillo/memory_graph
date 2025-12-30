@@ -17,3 +17,8 @@
 ## Phase 4: Query Engine
 - [ ] Implement Query DSL parsing (Structs defined)
 - [ ] Implement Basic Execution Logic
+
+## Phase 5: Research Instrumentation
+- [ ] Implement Coherence Metrics (Semantic-Structural Alignment)
+- [ ] Implement Orphan Detection
+- [ ] Implement Memory Decay Logic

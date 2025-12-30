@@ -1,6 +1,6 @@
 # Research Goals: The Science of Cognitive Agent Memory
 
-MemoryGraph is a **research instrument**, not just a database. It exists to answer questions that existing vector-graph solutions cannot.
+MemoryGraph is a **research-grade memory engine**, not just a database. It exists to answer questions that existing vector-graph solutions cannot.
 
 ## Positioning: What's Novel
 

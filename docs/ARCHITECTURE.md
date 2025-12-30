@@ -2,7 +2,7 @@
 
 ## 1. System Overview
 
-MemoryGraph is a single-node (initially), embedded or server-based database written in Rust. It is designed for read-heavy, write-moderate workloads typical of AI agents (10:1 read:write ratio).
+MemoryGraph is a single-node (initially), embedded or server-based memory engine written in Rust. It is designed for read-heavy, write-moderate workloads typical of AI agents (10:1 read:write ratio).
 
 ### Core Components
 
