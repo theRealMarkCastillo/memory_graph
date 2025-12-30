@@ -68,6 +68,14 @@ pub struct Edge {
     pub created_at: DateTime<Utc>,
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct InboundEdge {
+    pub source_id: Uuid,
+    pub relation_type: String,
+    pub weight: f32,
+    pub created_at: DateTime<Utc>,
+}
+
 impl Memory {
     pub fn new(content: String, embedding: Vec<f32>, memory_type: MemoryType) -> Self {
         let now = Utc::now();
