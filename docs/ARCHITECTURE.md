@@ -104,11 +104,11 @@ Instead of writing a custom WAL and SSTable implementation (which risks data dur
 *   **Data Layout:**
     *   `memories:{uuid}` -> `bincode(MemoryStruct)`
     *   `edges:out:{uuid}` -> `[Edge, ...]`
-    *   `edges:in:{uuid}` -> `[SourceUuid, ...]` (Reverse Index)
+    *   `edges:in:{uuid}` -> `[InboundEdge, ...]` (Reverse Index)
 
 ### 3.2 Indexing Strategy
 
-MemoryGraph maintains four co-located indexes:
+MemoryGraph maintains three co-located indexes:
 
 1.  **Vector Index (HNSW):**
     *   **Phase 1:** Standard HNSW implementation (via `hnsw_rs` or `lance`).
@@ -116,7 +116,7 @@ MemoryGraph maintains four co-located indexes:
 
 2.  **Graph Index (Adjacency List):**
     *   **Forward Index:** `HashMap<Uuid, Vec<Edge>>` for `(A) -> (B)` traversal.
-    *   **Reverse Index:** `HashMap<Uuid, Vec<Uuid>>` for `(A) <- (B)` traversal (incoming edges).
+    *   **Reverse Index:** `HashMap<Uuid, Vec<InboundEdge>>` for `(A) <- (B)` traversal (incoming edges).
     *   *Crucial for:* "What triggered this memory?" queries.
 
 3.  **Metadata Index (Inverted Index):**
@@ -155,7 +155,7 @@ The planner sees the full query and chooses the optimal execution path:
 2.  **Vector Step:** Perform HNSW search *restricted* to set `S` (using bitmasking). Get top `K` nodes.
 3.  **Traversal Step:** Immediately expand edges from top `K` nodes within the same engine memory space.
 4.  **Cognitive Ranking:** Score results using:
-    ```
+    ```text
     Score = (α * VectorSimilarity) 
           + (β * GraphCentrality) 
           + (γ * Recency) 
