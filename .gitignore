@@ -1,3 +1,4 @@
 /target
 /memory_graph.db
 **/.DS_Store
+chatbot_memory.db
