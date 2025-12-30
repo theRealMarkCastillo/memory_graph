@@ -56,11 +56,31 @@ MemoryGraph treats **Memories** as cognitive units — not just data records. Ea
 *   **Graph Storage:** Bidirectional Adjacency Lists (forward + reverse indexes)
 *   **Query Interface:** JSON Query DSL (no custom parser complexity)
 
+## 🏁 Getting Started
+
+### Prerequisites
+*   Rust (latest stable) -> [Install Rust](https://rustup.rs/)
+
+### Build and Run Demo
+The current prototype includes a CLI demo that initializes the engine, creates sample memories (Episodic & Semantic), links them via a graph edge, and executes a **Hybrid Query** (Vector Search + Graph Traversal).
+
+```bash
+# Clone the repository
+git clone https://github.com/markcastillo/memory_graph.git
+cd memory_graph
+
+# Run the demo
+cargo run
+```
+
+**Expected Output:**
+You should see the engine initialize, save memories, create an edge, and perform a query that finds a memory via vector similarity ("coffee") and then traverses the graph to find a related fact ("airtight containers").
+
 ## 📚 Documentation
 
-*   [**Architecture**](ARCHITECTURE.md) - Internal design, storage layout, and indexing strategy.
-*   [**Query DSL**](QUERY_LANGUAGE.md) - JSON-based query syntax and examples.
-*   [**Research Goals**](RESEARCH_GOALS.md) - The scientific hypotheses on emergent behavior and memory coherence.
+*   [**Architecture**](docs/ARCHITECTURE.md) - Internal design, storage layout, and indexing strategy.
+*   [**Query DSL**](docs/QUERY_LANGUAGE.md) - JSON-based query syntax and examples.
+*   [**Research Goals**](docs/RESEARCH_GOALS.md) - The scientific hypotheses on emergent behavior and memory coherence.
 
 ## 🧪 Research Focus
 

@@ -15,8 +15,8 @@
 - [x] Implement Vector Index Interface (Moved to `src/index/vector.rs`, `SimpleVectorIndex` implemented)
 
 ## Phase 4: Query Engine
-- [ ] Implement Query DSL parsing (Structs defined)
-- [ ] Implement Basic Execution Logic
+- [x] Implement Query DSL parsing (Structs defined)
+- [x] Implement Basic Execution Logic (Implemented in `src/query/engine.rs`)
 
 ## Phase 5: Research Instrumentation
 - [ ] Implement Coherence Metrics (Semantic-Structural Alignment)
