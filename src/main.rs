@@ -34,7 +34,7 @@ fn main() -> Result<()> {
 
     // Create an edge between them
     println!("Creating edge: {} -> {}", memory1.id, memory2.id);
-    storage.add_edge(memory1.id, memory2.id, "relates_to".to_string(), 0.8)?;
+    storage.add_edge_inherent(memory1.id, memory2.id, "relates_to".to_string(), 0.8)?;
 
     // Verify outbound edges
     let outbound = storage.get_outbound_edges(memory1.id)?;

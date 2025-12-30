@@ -1,4 +1,5 @@
 use crate::models::{Memory, Edge, InboundEdge};
+use crate::index::GraphIndex;
 use anyhow::Result;
 use redb::{Database, ReadableTable, TableDefinition};
 use std::path::Path;
@@ -11,6 +12,22 @@ const EDGES_IN: TableDefinition<u128, Vec<u8>> = TableDefinition::new("edges_in"
 
 pub struct StorageManager {
     db: Database,
+}
+
+impl GraphIndex for StorageManager {
+    fn add_edge(&mut self, source: Uuid, target: Uuid, relation_type: String, weight: f32) -> Result<()> {
+        // Delegate to the inherent method, but note that the trait takes &mut self
+        // while our inherent method takes &self. Since redb handles concurrency,
+        // we can just call the inherent method.
+        // However, to match the trait signature, we might need to change the trait or the impl.
+        // For now, let's just call the inherent method.
+        self.add_edge_inherent(source, target, relation_type, weight)
+    }
+
+    fn get_neighbors(&self, node: Uuid) -> Result<Vec<(Uuid, f32)>> {
+        let edges = self.get_outbound_edges(node)?;
+        Ok(edges.into_iter().map(|e| (e.target_id, e.weight)).collect())
+    }
 }
 
 impl StorageManager {
@@ -60,7 +77,7 @@ impl StorageManager {
 
     // --- Graph Operations ---
 
-    pub fn add_edge(&self, source: Uuid, target: Uuid, relation_type: String, weight: f32) -> Result<()> {
+    pub fn add_edge_inherent(&self, source: Uuid, target: Uuid, relation_type: String, weight: f32) -> Result<()> {
         let write_txn = self.db.begin_write()?;
         let now = Utc::now();
 

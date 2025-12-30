@@ -11,8 +11,8 @@
 - [x] Implement CRUD for Memories (Basic Save/Get/List implemented)
 
 ## Phase 3: Indexes
-- [ ] Implement Graph Adjacency Index
-- [ ] Implement Vector Index Interface (Interface defined, placeholder implemented)
+- [x] Implement Graph Adjacency Index (Implemented in `StorageManager` with `redb`)
+- [x] Implement Vector Index Interface (Moved to `src/index/vector.rs`, `SimpleVectorIndex` implemented)
 
 ## Phase 4: Query Engine
 - [ ] Implement Query DSL parsing (Structs defined)
