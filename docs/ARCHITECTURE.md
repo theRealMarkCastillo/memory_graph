@@ -8,13 +8,13 @@ MemoryGraph is a single-node (initially), embedded or server-based memory engine
 
 ```mermaid
 graph TD
-    Client[Client (Python/Rust)] --> API[gRPC / HTTP API]
-    API --> QueryPlanner[Query Planner]
-    QueryPlanner --> Executor[Query Executor]
-    Executor --> VectorIndex[HNSW Index]
-    Executor --> GraphIndex[Adjacency Index]
-    Executor --> Storage[redb KV Store]
-    Executor --> Metadata[Inverted Index]
+    Client["Client (Python/Rust)"] --> API["gRPC / HTTP API"]
+    API --> QueryPlanner["Query Planner"]
+    QueryPlanner --> Executor["Query Executor"]
+    Executor --> VectorIndex["HNSW Index"]
+    Executor --> GraphIndex["Adjacency Index"]
+    Executor --> Storage["redb KV Store"]
+    Executor --> Metadata["Inverted Index"]
 ```
 
 ## 2. Data Model
