@@ -27,26 +27,26 @@ The fundamental unit is a `Memory`. Unlike traditional graph DBs where nodes and
 struct Memory {
     /// Unique identifier (UUID v7 for time-sortability)
     id: Uuid,
-    
+
     /// The raw text content or payload
     content: String,
-    
+
     /// 384D - 1536D vector embedding
     embedding: Vec<f32>,
-    
+
     /// Cognitive classification (key differentiator from other DBs)
     memory_type: MemoryType,
-    
+
     /// Arbitrary JSON metadata (user_id, source, etc.)
     metadata: HashMap<String, Value>,
-    
+
     /// Outgoing edges (relationships)
     edges: Vec<Edge>,
-    
+
     /// System timestamps
     created_at: DateTime<Utc>,
     last_accessed_at: DateTime<Utc>,
-    
+
     /// Cognitive metrics (built-in, not application-managed)
     access_count: u64,
     importance: f32,        // 0.0 - 1.0, updated by access patterns
@@ -56,18 +56,18 @@ struct Memory {
 /// Cognitive Memory Types - First-class schema support
 enum MemoryType {
     /// Event memories ("I talked to Mark about coffee")
-    Episodic { 
-        event_id: Option<Uuid>, 
+    Episodic {
+        event_id: Option<Uuid>,
         participants: Vec<String>,
         location: Option<String>,
     },
     /// Fact memories ("Mark likes dark roast")
-    Semantic { 
+    Semantic {
         confidence: f32,      // 0.0 - 1.0
         source: String,       // Where this fact came from
     },
     /// Skill/procedure memories ("How to make pour-over coffee")
-    Procedural { 
+    Procedural {
         success_rate: f32,    // Historical success
         last_executed: Option<DateTime<Utc>>,
     },
@@ -156,9 +156,9 @@ The planner sees the full query and chooses the optimal execution path:
 3.  **Traversal Step:** Immediately expand edges from top `K` nodes within the same engine memory space.
 4.  **Cognitive Ranking:** Score results using:
     ```text
-    Score = (α * VectorSimilarity) 
-          + (β * GraphCentrality) 
-          + (γ * Recency) 
+    Score = (α * VectorSimilarity)
+          + (β * GraphCentrality)
+          + (γ * Recency)
           + (δ * Importance)
     ```
     Note: `Recency` and `Importance` are **built-in cognitive metrics**, not application-computed.
