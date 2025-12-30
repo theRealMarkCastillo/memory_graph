@@ -61,20 +61,29 @@ MemoryGraph treats **Memories** as cognitive units — not just data records. Ea
 ### Prerequisites
 *   Rust (latest stable) -> [Install Rust](https://rustup.rs/)
 
-### Build and Run Demo
-The current prototype includes a CLI demo that initializes the engine, creates sample memories (Episodic & Semantic), links them via a graph edge, and executes a **Hybrid Query** (Vector Search + Graph Traversal).
+### 1. Basic Demo
+The basic demo initializes the engine, creates sample memories (Episodic & Semantic), links them via a graph edge, and executes a **Hybrid Query** (Vector Search + Graph Traversal).
 
 ```bash
 # Clone the repository
 git clone https://github.com/markcastillo/memory_graph.git
 cd memory_graph
 
-# Run the demo
+# Run the basic demo
 cargo run
 ```
 
-**Expected Output:**
-You should see the engine initialize, save memories, create an edge, and perform a query that finds a memory via vector similarity ("coffee") and then traverses the graph to find a related fact ("airtight containers").
+### 2. Mars Colony Simulation
+A more complex example simulating an AI agent on a Mars colony. It demonstrates **Root Cause Analysis** (outbound traversal) and **Contextual Recall** (inbound traversal) across a chain of 4 connected memories.
+
+```bash
+# Run the simulation
+cargo run --example mars_simulation
+```
+
+**Scenario A (Root Cause):** The agent detects a "thermal spike" (Vector Match) and traverses the graph to find that "Commander Lewis authorized a coolant flush" (Graph Traversal).
+
+**Scenario B (Contextual Recall):** The agent asks about "Commander Lewis" and traces back the effects of their actions to the "Sensor anomaly".
 
 ## 📚 Documentation
 
